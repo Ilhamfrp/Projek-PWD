@@ -25,6 +25,8 @@ if(!isset($_SESSION["login"])){
     <div>
       <a href="sewa.php">Rent Now</a>
       <a href="review.php">Review</a>
+      <a href="register.php">Sign Up</a>
+      <a href="login.php">Sign In</a>
     </div>
   </header>
 
