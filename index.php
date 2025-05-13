@@ -9,14 +9,7 @@ if(!isset($_SESSION["login"])){
 <head>
   <meta charset="UTF-8">
   <title>iRentID - Sewa iPhone</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
