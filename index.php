@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>iRentID - Sewa iPhone</title>
+  <title>RentalanIP - Sewa iPhone</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
