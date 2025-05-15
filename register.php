@@ -39,19 +39,22 @@ if(isset($_POST["register"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
     <title>Daftar Akun</title>
 </head>
 <body>
-    <form action="" method="post">
-        <h1>Registrasi Akun</h1>
-        <label for="username">Username</label> <br>
-        <input type="text" name="username" id=username> <br>
-        <label for="password">Password</label> <br>
-        <input type="password" name="password" id=password> <br>
-        <label for="password2">Konfirmasi Password</label> <br>
-        <input type="password" name="password2" id=password2> <br>
+    <div class="register-container">
+        <form action="" method="post">
+            <h1>Registrasi Akun</h1> <br>
+            <label for="username">Username</label>
+            <input type="text" name="username" id=username> <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id=password> <br>
+            <label for="password2">Konfirmasi Password</label>
+            <input type="password" name="password2" id=password2> <br>
 
-        <input type="submit" value="register" name="register">
-    </form>
+            <input type="submit" value="register" name="register">
+        </form>
+    </div>
 </body>
 </html>
