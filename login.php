@@ -36,14 +36,14 @@ if(isset($_POST["login"])){
 <body>
     <div class="login-container">
         <form action="" method="post">
-            <h1>Login Akun</h1>
-            <label for="username">Username</label> <br>
+            <h1>Login Akun</h1> <br>
+            <label for="username">Username</label>
             <input type="text" name="username" id=username> <br>
-            <label for="password">Password</label> <br>
+            <label for="password">Password</label>
             <input type="password" name="password" id=password> <br>
 
             <input type="submit" value="login" name="login">
-        </form>
+        </form> <br>
 
         <div>
             Belum punya akun? <a href="register.php">Sign Up</a>
