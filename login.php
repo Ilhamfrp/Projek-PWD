@@ -30,17 +30,24 @@ if(isset($_POST["login"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
     <title>Login</title>
 </head>
 <body>
-    <form action="" method="post">
-        <h1>Login Akun</h1>
-        <label for="username">Username</label> <br>
-        <input type="text" name="username" id=username> <br>
-        <label for="password">Password</label> <br>
-        <input type="password" name="password" id=password> <br>
+    <div class="login-container">
+        <form action="" method="post">
+            <h1>Login Akun</h1>
+            <label for="username">Username</label> <br>
+            <input type="text" name="username" id=username> <br>
+            <label for="password">Password</label> <br>
+            <input type="password" name="password" id=password> <br>
 
-        <input type="submit" value="login" name="login">
-    </form>
+            <input type="submit" value="login" name="login">
+        </form>
+
+        <div>
+            Belum punya akun? <a href="register.php">Sign Up</a>
+        </div>
+    </div>
 </body>
 </html>
