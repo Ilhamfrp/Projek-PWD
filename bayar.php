@@ -14,7 +14,7 @@ if (!isset($_GET['idSewa'])) {
 
 $idSewa = $_GET['idSewa'];
 
-// Ambil data sewa + harga
+
 $q = mysqli_query($conn, "
     SELECT s.totalHarga, i.nama 
     FROM sewa s
