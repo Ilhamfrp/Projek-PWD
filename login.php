@@ -14,7 +14,7 @@ if(isset($_POST["login"])){
 
         if(password_verify($password, $row["password"])) {
             $_SESSION["login"] = true;
-            header("Location: index.php");
+            header("Location: sewa.php");
             exit;
         };
     }
