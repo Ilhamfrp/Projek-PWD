@@ -7,7 +7,6 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-
 $query = mysqli_query($conn, "SELECT * FROM iphones");
 ?>
 
@@ -38,8 +37,7 @@ $query = mysqli_query($conn, "SELECT * FROM iphones");
         <img src="images/<?= $row['gambar'] ?>" alt="<?= $row['nama'] ?>">
         <h3><?= $row['nama'] ?></h3>
         <p>Rp <?= number_format($row['hargaPerHari'], 0, ',', '.') ?> / hari</p>
-
-        <!-- Redirect ke form penyewaan lengkap -->
+        <div class="info">Storage: <?= $row['storage'] ?><br>color: <?= $row['warna'] ?></div>
         <a href="proses_sewa.php?id=<?= $row['idIphone'] ?>" class="btn-sewa">Sewa Sekarang</a>
       </div>
     <?php endwhile; ?>

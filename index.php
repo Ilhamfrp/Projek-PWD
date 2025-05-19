@@ -2,74 +2,79 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>RentalanIP - Sewa iPhone</title>
+  <title>Rentalan IP</title>
   <link rel="stylesheet" href="style.css">
+   
 </head>
 <body>
 
-  <header class="navbar">
-    <div><strong>RentalanIP</strong></div>
+  <div class="navbar">
+    <div><strong>Rentalan IP</strong></div>
     <div>
+      <a href="index.php">Home</a>
       <a href="sewa.php">Rent Now</a>
       <a href="review.php">Review</a>
       <a href="register.php">Sign Up</a>
       <a href="login.php">Login</a>
     </div>
-  </header>
+  </div>
 
-  <section class="hero">
-    <h1>Sewa iPhone Terbaru Tanpa Ribet</h1>
-    <p>Mulai dari Rp50.000/hari. Praktis, cepat, dan terpercaya.</p><br>
-    <a href="sewa.php" class="btn">Sewa Sekarang</a>
-  </section>
+  <div class="hero">
+    <h1>Rentalan IP</h1>
+    <p>Sewa iPhone berkualitas dengan mudah dan cepat melalui website kami</p>
+  </div>
 
-  <section class="section" style="background-color: #fefefe;">
-    <h2>Mengapa Memilih RentalanIP
-      ?</h2>
+  <section class="section">
+    <h2>Cara Memesan</h2>
     <div class="grid">
       <div class="card">
-        <h3>📱 iPhone Asli</h3>
-        <p>Semua unit 100% original dan berkualitas.</p>
+        <h3>1. Login / Daftar</h3>
+        <p>Buat akun untuk memulai penyewaan</p>
       </div>
       <div class="card">
-        <h3>🚀 Proses Cepat</h3>
-        <p>Pemesanan instan tanpa ribet dan verifikasi panjang.</p>
+        <h3>2. Pilih iPhone</h3>
+        <p>Lihat dan pilih iPhone yang ingin kamu sewa</p>
       </div>
       <div class="card">
-        <h3>🛡️ Aman & Terjamin</h3>
-        <p>Privasi pengguna selalu kami jaga sepenuhnya.</p>
+        <h3>3. Isi Form Penyewaan</h3>
+        <p>Masukkan tanggal sewa dan data lainnya</p>
       </div>
       <div class="card">
-        <h3>💬 Support 24/7</h3>
-        <p>Kami siap membantu kapan pun kamu butuh bantuan.</p>
+        <h3>4. Lakukan Pembayaran</h3>
+        <p>Transfer atau pilih bayar di tempat</p>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background-color: #eef1f5;">
-    <h2>Cara Sewa di RentalanIP
-      
-    </h2>
-    <div class="grid">
-      <div class="card">
-        <div class="step-circle">1</div>
-        <p>Pilih iPhone dari halaman katalog.</p>
-      </div>
-      <div class="card">
-        <div class="step-circle">2</div>
-        <p>Isi data penyewa dan alamat pengiriman.</p>
-      </div>
-      <div class="card">
-        <div class="step-circle">3</div>
-        <p>Tunggu konfirmasi dan barang langsung dikirim.</p>
-      </div>
+  <section class="about">
+    <h2>Tentang Kami</h2>
+    <p>Rentalan IP adalah layanan penyewaan iPhone terpercaya yang memberikan kemudahan dalam meminjam perangkat berkualitas tinggi untuk kebutuhan harian, acara, atau keperluan bisnis. Kami berkomitmen menghadirkan layanan cepat, transparan, dan aman bagi seluruh pelanggan kami.</p>
+  </section>
+
+  <section class="footer">
+    <div class="col">
+      <h3>Alamat</h3>
+      <p>UPNVY, Sleman, Yogyakarta</p>
+      <p>088888888</p>
+      <p>Instagram: @ilpranoto</p>
+    </div>
+    <div class="col">
+      <h3>Halaman</h3>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Regulations</a>
+    </div>
+    <div class="col">
+      <h3>Newsletter</h3>
+      <p>Masukkan email Anda untuk mendapatkan update terbaru.</p>
+      <input type="email" placeholder="Your email">
+      <button>Subscribe</button>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>&copy; <?= date('Y') ?> RentalanIP
-    . All rights reserved.</p>
-  </footer>
+  <div class="copyright">
+    <p>&copy; <?= date('Y') ?> Rentalan IP. All rights reserved.</p>
+  </div>
 
 </body>
 </html>
