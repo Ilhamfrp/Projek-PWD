@@ -57,6 +57,7 @@
       <p>UPNVY, Sleman, Yogyakarta</p>
       <p>088888888</p>
       <p>Instagram: @ilpranoto</p>
+      <p>Instagram: @vinabudiastuti</p>
     </div>
     <div class="col">
       <h3>Halaman</h3>

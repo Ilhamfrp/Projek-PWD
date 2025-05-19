@@ -19,15 +19,16 @@ $query = mysqli_query($conn, "SELECT * FROM iphones");
 </head>
 <body>
 
-<header class="navbar">
-  <div><strong>RentalanIP</strong></div>
-  <div>
-    <a href="sewa.php">Rent Now</a>
-    <a href="review.php">Review</a>
-    <a href="register.php">Sign Up</a>
-    <a href="login.php">Login</a>
+ <div class="navbar">
+    <div><strong>Rentalan IP</strong></div>
+    <div>
+      <a href="index.php">Home</a>
+      <a href="sewa.php">Rent Now</a>
+      <a href="review.php">Review</a>
+      <a href="register.php">Sign Up</a>
+      <a href="login.php">Login</a>
+    </div>
   </div>
-</header>
 
 <section class="section">
   <h2>Pilih iPhone yang Ingin Kamu Sewa</h2>
