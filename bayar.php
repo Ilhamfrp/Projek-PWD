@@ -1,33 +1,40 @@
 <?php
-include 'koneksi.php';
-session_start();
+  include 'koneksi.php';
+  session_start();
 
-if (!isset($_SESSION["login"])) {
-    header("Location: login.php");
-    exit;
-}
+  if (!isset($_SESSION["login"])) {
+      header("Location: login.php");
+      exit;
+  }
 
-if (!isset($_GET['idSewa'])) {
-    echo "ID sewa tidak valid.";
-    exit;
-}
+  if (!isset($_GET['idSewa'])) {
+      echo "ID sewa tidak valid.";
+      exit;
+  }
 
-$idSewa = $_GET['idSewa'];
+  $idSewa = $_GET['idSewa'];
 
-$q = mysqli_query($conn, "
-    SELECT s.totalHarga, i.nama, p.metode, p.tanggalBayar, p.status
-    FROM sewa s
-    JOIN iphones i ON s.idIphone = i.idIphone
-    LEFT JOIN payment p ON p.idSewa = s.idSewa
-    WHERE s.idSewa = $idSewa
-");
-$data = mysqli_fetch_assoc($q);
+  $q = mysqli_query($conn, "
+      SELECT s.tglMulai, s.tglSelesai, i.hargaPerHari, i.nama, p.metode, p.tanggalBayar, p.status
+      FROM sewa s
+      JOIN iphones i ON s.idIphone = i.idIphone
+      LEFT JOIN payment p ON p.idSewa = s.idSewa
+      WHERE s.idSewa = $idSewa
+  ");
 
-if (!$data) {
-    echo "Data sewa tidak ditemukan.";
-    exit;
-}
+  $data = mysqli_fetch_assoc($q);
+
+  if (!$data) {
+      echo "Data sewa tidak ditemukan.";
+      exit;
+  }
+
+  $tglMulai = new DateTime($data['tglMulai']);
+  $tglSelesai = new DateTime($data['tglSelesai']);
+  $lamaSewa = $tglMulai->diff($tglSelesai)->days;
+  $totalHarga = $lamaSewa * $data['hargaPerHari'];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="id">
@@ -128,12 +135,13 @@ if (!$data) {
 
 <section class="section">
   <h2>Bayar untuk: <?= $data['nama'] ?></h2>
-  <p>Total yang harus dibayar: <strong>Rp <?= number_format($data['totalHarga'], 0, ',', '.') ?></strong></p>
+  <p>Lama sewa: <strong><?= $lamaSewa ?> hari</strong></p>
+  <p>Total yang harus dibayar: <strong>Rp <?= number_format($totalHarga, 0, ',', '.') ?></strong></p>
 
   <?php if (empty($data['metode'])) : ?>
     <form action="" method="POST">
       <input type="hidden" name="idSewa" value="<?= $idSewa ?>">
-      <input type="hidden" name="jumlah" value="<?= $data['totalHarga'] ?>">
+      <input type="hidden" name="jumlah" value="<?= $totalHarga ?>">
 
       <label for="metode">Metode Pembayaran:</label>
       <select name="metode" required>
@@ -148,7 +156,7 @@ if (!$data) {
     <div class="result">
       <p><strong>Transaksi Tercatat</strong></p>
       <p>Nama iPhone: <?= $data['nama'] ?></p>
-      <p>Total: Rp <?= number_format($data['totalHarga'], 0, ',', '.') ?></p>
+      <p>Total: Rp <?= number_format($totalHarga, 0, ',', '.') ?></p>
       <p>Metode: <?= $data['metode'] ?></p>
       <p>Tanggal: <?= $data['tanggalBayar'] ?></p>
     </div>
