@@ -2,6 +2,8 @@
 include "koneksi.php";
 
 if(isset($_POST["register"])) {
+    $nama = $_POST["nama"];
+    $alamat = $_POST["alamat"];
     $username = strtolower($_POST["username"]);
     $password = $_POST["password"];
     $password2 = $_POST["password2"];
@@ -18,16 +20,17 @@ if(isset($_POST["register"])) {
         $password = password_hash($password, PASSWORD_DEFAULT);
 
         //masukin ke database
-        $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+        $query = "INSERT INTO users (nama, alamat, username, password, role) VALUES ('$nama', '$alamat', '$username', '$password', 'user')";
         $q = mysqli_query($conn, $query);
 
         if($q){
             echo "<script>
-            alert('user berhasil ditambahkan')
+            alert('Pembuatan akun berhasil!')
             </script>";
+            header("Location: login.php");
         } else {
             echo "<script>
-            alert('user gagal ditambahkan')
+            alert('Pembuatan akun gagal.')
             </script>";
         }
     }
@@ -46,6 +49,10 @@ if(isset($_POST["register"])) {
     <div class="register-container">
         <form action="" method="post">
             <h1>Registrasi Akun</h1> <br>
+            <label for="nama">Nama</label>
+            <input type="text" name="nama" id=nama> <br>
+            <label for="alamat">Alamat</label>
+            <input type="text" name="alamat" id=alamat> <br>
             <label for="username">Username</label>
             <input type="text" name="username" id=username> <br>
             <label for="password">Password</label>
