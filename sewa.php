@@ -19,16 +19,24 @@ $query = mysqli_query($conn, "SELECT * FROM iphones");
 </head>
 <body>
 
- <div class="navbar">
-    <div><strong>Rentalan IP</strong></div>
-    <div>
-      <a href="index.php">Home</a>
-      <a href="sewa.php">Rent Now</a>
-      <a href="review.php">Review</a>
-      <a href="register.php">Sign Up</a>
-      <a href="login.php">Login</a>
-    </div>
+<header class="navbar">
+  <div><strong>RentalanIP</strong></div>
+  <div>
+    <a href="index.php">Home</a>
+    <a href="review.php">Review</a>
+    <?php
+      if (isset($_SESSION["login"])) {
+      echo "Halo, " . $_SESSION["nama"] . " | ";
+      echo '<a href="logout.php">Logout</a>';
+      if (isset($_SESSION["role"]) && $_SESSION["role"] == "admin") {
+          echo ' | <a href="admin_dashboard.php">Dashboard Admin</a>';
+      }
+      } else {
+          echo '<a href="register.php">Sign Up</a> | <a href="login.php">Login</a>';
+      }
+    ?>
   </div>
+</header>
 
 <section class="section">
   <h2>Pilih iPhone yang Ingin Kamu Sewa</h2>

@@ -135,10 +135,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div><strong>Rentalan IP</strong></div>
     <div>
       <a href="index.php">Home</a>
-      <a href="sewa.php">Rent Now</a>
       <a href="review.php">Review</a>
-      <a href="register.php">Sign Up</a>
-      <a href="login.php">Login</a>
+      <?php
+        if (isset($_SESSION["login"])) {
+        echo "Halo, " . $_SESSION["nama"] . " | ";
+        echo '<a href="logout.php">Logout</a>';
+        if (isset($_SESSION["role"]) && $_SESSION["role"] == "admin") {
+            echo ' | <a href="admin_dashboard.php">Dashboard Admin</a>';
+        }
+        } else {
+            echo '<a href="register.php">Sign Up</a> | <a href="login.php">Login</a>';
+        }
+      ?>
     </div>
   </div>
 
