@@ -1,28 +1,37 @@
 <?php
-include "koneksi.php";
-session_start();
+    session_start();
+    include "koneksi.php";
 
-if(isset($_POST["login"])){
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    if(isset($_POST["login"])){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
 
-    //1. ambil data dari tabel
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
+        //1. ambil data dari tabel
+        $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
 
-    if (mysqli_num_rows($result) == 1){ //mysqli_num_rows => melihat brp data yg diambil dr $result
-        $row = mysqli_fetch_assoc($result);
+        if (mysqli_num_rows($result) == 1){ //mysqli_num_rows => melihat brp data yg diambil dr $result
+            $row = mysqli_fetch_assoc($result);
 
-        if(password_verify($password, $row["password"])) {
-            $_SESSION["login"] = true;
-            header("Location: sewa.php");
-            exit;
-        };
+            if(password_verify($password, $row["password"])) {
+                $_SESSION["login"] = true;
+                $_SESSION["id"] = $row["id"]; // SIMPAN ID USER KE SESSION
+                $_SESSION["nama"] = $row["nama"]; // opsional, buat nampilin nama
+                $_SESSION["role"] = $row["role"]; // simpan role admin/user ke session
+                
+                // Arahkan sesuai role
+                if ($row["role"] == "admin") {
+                    header("Location: admin_dashboard.php");
+                } else {
+                    header("Location: sewa.php");
+                }
+                exit;
+            };
+        }
+
+        echo "<script>
+                alert('username/password salah cuy!')
+            </script>";
     }
-
-    echo "<script>
-            alert('username/password salah cuy!')
-        </script>";
-}
 ?>
 
 <!DOCTYPE html>
