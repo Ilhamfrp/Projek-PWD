@@ -1,0 +1,91 @@
+/* kelola_sewa.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #111;
+  padding: 2rem 3rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+th, td {
+  padding: 1rem 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+th {
+  background-color: #000;
+  font-weight: bold;
+  color: #eee;
+}
+
+tr:hover {
+  background-color: #333;
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  color: white;
+  display: inline-block;
+}
+
+a[href*="aksi=acc"] {
+  background-color: teal;
+}
+
+a[href*="aksi=acc"]:hover {
+  background-color: #008080cc;
+}
+
+a[href*="aksi=tolak"] {
+  background-color: #b22222;
+}
+
+a[href*="aksi=tolak"]:hover {
+  background-color: #a11b1bcc;
+}
+
+em {
+  color: #aaa;
+  font-style: normal;
+  font-weight: bold;
+}
+
+a.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: teal;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a.back-link:hover {
+  color: #008080cc;
+}

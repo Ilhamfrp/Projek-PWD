@@ -3,22 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Rentalan IP</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
    
 </head>
 <body>
-
+<div class="container">
+  
+</div>
   <div class="navbar">
-    <div><strong>Rentalan IP</strong></div>
-    <div>
-      <a href="index.php">Home</a>
-      <a href="sewa.php">Rent Now</a>
-      <a href="review.php">Review</a>
+  <div><strong>Rentalan IP</strong></div>
+  <div>
+    <a href="index.php">Home</a>
+    <a href="sewa.php">Rent Now</a>
+    <a href="review.php">Review</a>
+    <?php if (isset($_SESSION['username'])): ?>
+      <a href="riwayat_pesanan.php">Riwayat</a>
+      <a href="logout.php">Logout</a>
+    <?php else: ?>
       <a href="register.php">Sign Up</a>
       <a href="login.php">Login</a>
-    </div>
+    <?php endif; ?>
   </div>
+</div>
+
+</div>
 
   <div class="hero">
     <h1>Rentalan IP</h1>

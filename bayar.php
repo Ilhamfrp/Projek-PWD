@@ -37,87 +37,12 @@
 
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bayar.css">
   <title>Pembayaran - RentalanIP</title>
-  <style>
-    body {
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-      font-family: 'Segoe UI', sans-serif;
-    }
-  .navbar {
-      background-color: #000;
-      color: white;
-      padding: 1em 2em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .navbar a {
-      color: white;
-      margin: 0 1em;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-    .section {
-      padding: 4em 2em;
-      max-width: 600px;
-      margin: auto;
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(255,255,255,0.05);
-    }
-    .section h2 {
-      font-size: 1.8em;
-      margin-bottom: 1em;
-    }
-    .section p {
-      margin-bottom: 1.5em;
-    }
-    label, select {
-      display: block;
-      margin-bottom: 1em;
-      font-size: 0.95em;
-    }
-    select {
-      width: 100%;
-      padding: 0.5em;
-      border-radius: 6px;
-      border: none;
-    }
-    .btn-sewa {
-      background-color: #007bff;
-      color: white;
-      padding: 0.6em 1.2em;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .btn-sewa:hover {
-      background-color: #0056b3;
-    }
-    .result {
-      margin-top: 2em;
-      padding: 1em;
-      background-color: #2a2a2a;
-      border-radius: 8px;
-      font-size: 0.95em;
-    }
-    .footer {
-      background-color: #000;
-      color: white;
-      padding: 2em;
-      text-align: center;
-      margin-top: 3em;
-    }
-  </style>
 </head>
 <body>
 
@@ -138,7 +63,7 @@
         }
     ?>
     </div>
-  </div>
+</div>
 
 
 <section class="section">
