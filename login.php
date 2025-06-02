@@ -6,7 +6,7 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        //1. ambil data dari tabel
+        // ambil data dari tabel
         $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
 
         if (mysqli_num_rows($result) == 1){ //mysqli_num_rows => melihat brp data yg diambil dr $result
@@ -14,9 +14,9 @@
 
             if(password_verify($password, $row["password"])) {
                 $_SESSION["login"] = true;
-                $_SESSION["id"] = $row["id"]; // SIMPAN ID USER KE SESSION
-                $_SESSION["nama"] = $row["nama"]; // opsional, buat nampilin nama
-                $_SESSION["role"] = $row["role"]; // simpan role admin/user ke session
+                $_SESSION["id"] = $row["id"];
+                $_SESSION["nama"] = $row["nama"];
+                $_SESSION["role"] = $row["role"];
                 
                 // Arahkan sesuai role
                 if ($row["role"] == "admin") {
@@ -47,9 +47,9 @@
         <form action="" method="post">
             <h1>Login Akun</h1> <br>
             <label for="username">Username</label>
-            <input type="text" name="username" id=username placeholder="Masukkan username" required> <br>
+            <input type="text" name="username" id=username placeholder="Masukkan username" required>
             <label for="password">Password</label>
-            <input type="password" name="password" id=password placeholder="Masukkan password" required> <br>
+            <input type="password" name="password" id=password placeholder="Masukkan password" required> <br><br>
 
             <input type="submit" value="login" name="login">
         </form> <br>

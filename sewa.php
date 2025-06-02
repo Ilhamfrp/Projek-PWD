@@ -22,6 +22,7 @@ $query = mysqli_query($conn, "SELECT * FROM iphones");
 <header class="navbar">
   <div><strong>RentalanIP</strong></div>
   <div>
+    <a href="index.php">Home</a>
     <a href="review.php">Review</a>
     <?php
       if (isset($_SESSION["login"])) {

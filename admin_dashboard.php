@@ -21,9 +21,8 @@
 
     <ul>
         <li><a href="kelola_iphone.php">Kelola iPhone</a></li>
-        <li><a href="kelola_review.php">Kelola Review</a></li>
         <li><a href="kelola_sewa.php">Data Penyewaan</a></li>
-        <li><a href="kelola_user.php">Daftar User</a></li>
+        <li><a href="kelola_users.php">Daftar User</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
 </body>

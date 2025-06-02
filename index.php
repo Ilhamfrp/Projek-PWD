@@ -18,7 +18,6 @@
   <div class="navbar">
   <div><strong>Rentalan IP</strong></div>
   <div>
-    <a href="index.php">Home</a>
     <a href="sewa.php">Rent Now</a>
     <a href="review.php">Review</a>
     <?php if (isset($_SESSION['nama'])): ?>
